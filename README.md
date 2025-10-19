@@ -7,7 +7,6 @@ Este proyecto es una implementación en Python para el procesamiento y análisis
 ## Tabla de Contenidos
 
 - [Descripción del Proyecto](#descripción-del-proyecto)
-- [Flujo de Trabajo del Proceso](#flujo-de-trabajo-del-proceso)
 - [Funcionalidades Implementadas](#funcionalidades-implementadas)
 - [Requisitos del Sistema](#requisitos-del-sistema)
 
@@ -17,28 +16,7 @@ El sector agropecuario genera vastas cantidades de datos, cuya correcta interpre
 
 El pipeline de procesamiento está diseñado para ser robusto y autónomo, minimizando la intervención manual y asegurando la integridad de los datos desde la ingestión hasta la generación del informe final.
 
-## Flujo de Trabajo del Proceso
 
-El siguiente diagrama de flujo describe los pasos lógicos y secuenciales que ejecuta el algoritmo principal (`procesar_archivo_excel`) para llevar a cabo el análisis:
-
-```mermaid
-graph TD
-    A[INICIO DEL PROCESO] --> B(Leer archivo Excel: cabecera en fila 3, saltar pie de página)
-    B --> C(Renombrar 'Unidade da Federação' a 'Estado')
-    C --> D(Rellenar celdas combinadas )
-    D --> E(Eliminar columnas de inspección ('Unnamed: 1', 'Tipo de inspeção'))
-    E --> F{¿El 'Estado' es 'Pará'?}
-    F -- SI --> G(Convertir columnas de datos a numérico, errores a 0)
-    G --> H(Extraer año de los nombres de las columnas de datos)
-    H --> I(Sumar los totales de abate por cada año)
-    I --> J(Crear DataFrame final: 'Año', 'Total Abatidos en Pará')
-    J --> K(Exportar DataFrame final a 'resultados_pará.xlsx')
-    K --> L[FIN DEL PROCESO]
-    F -- NO --> M(Registro: Fila no pertenece a Pará, omitir)
-    M --> E
-    B -- ERROR (FileNotFoundError/Otros) --> N(Manejo de Error: Notificar y finalizar)
-    N --> L
-```
 
 ## Funcionalidades Implementadas
 
