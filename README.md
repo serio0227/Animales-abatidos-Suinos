@@ -25,7 +25,7 @@ El siguiente diagrama de flujo describe los pasos lógicos y secuenciales que ej
 graph TD
     A[INICIO DEL PROCESO] --> B(Leer archivo Excel: cabecera en fila 3, saltar pie de página)
     B --> C(Renombrar 'Unidade da Federação' a 'Estado')
-    C --> D(Rellenar celdas combinadas en 'Estado' (ffill))
+    C --> D(Rellenar celdas combinadas en 'Estado' (fill))
     D --> E(Eliminar columnas de inspección ('Unnamed: 1', 'Tipo de inspeção'))
     E --> F{¿El 'Estado' es 'Pará'?}
     F -- SI --> G(Convertir columnas de datos a numérico, errores a 0)
