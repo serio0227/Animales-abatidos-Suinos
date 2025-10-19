@@ -43,7 +43,7 @@ Puedes instalar estas librerías utilizando `pip`:
 ```bash
 pip install pandas openpyxl
 ```
-
+## Visualizacion de los resultado 
 <img width="1454" height="525" alt="newplot" src="https://github.com/user-attachments/assets/a12ffa47-4851-418d-a007-cdaefe9b1a4d" />
 
 
